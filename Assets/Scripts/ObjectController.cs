@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
 public class ObjectController : MonoBehaviour
 {
@@ -70,7 +71,7 @@ public class ObjectController : MonoBehaviour
 
     void HandleRotation()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             UIInfoPrompt.Instance.Hide();
         }
